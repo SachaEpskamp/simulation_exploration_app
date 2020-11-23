@@ -20,7 +20,7 @@ library('shinycssloaders')
 # Read graphs:
 graphfiles <- list.files(path = "weights/", pattern = "_weights",full.names = TRUE)
 Graphs <- graphfiles %>% lapply(read.csv)
-names(Graphs) <- graphfiles %>% gsub("weights/","",.) %>% gsub("\\_weights\\.csv","",.)
+names(Graphs) <- graphfiles %>% gsub("weights//?","",.) %>% gsub("\\_weights\\.csv","",.)
  
 # Read data:
 # files <- list.files(path = "data/", pattern = "lisa_v13",full.names = TRUE)
