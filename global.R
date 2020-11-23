@@ -1,14 +1,30 @@
-library("shinythemes")
-library("shiny")
-library("ggplot2")
-library("dplyr")
-library("qgraph")
-library("shinyWidgets")
-library("ggh4x")
-library("RColorBrewer")
-library("tidyr")
-library("REdaS")
-library('shinycssloaders')
+# Install packages if needed:
+install_if_needed <- function(pkg){
+  if (!require(pkg, character.only = TRUE)) {
+    install.packages("shinythemes")
+    library(pkg, character.only = TRUE)
+  }
+}
+
+
+
+install_if_needed("shinythemes")
+install_if_needed("shiny")
+install_if_needed("ggplot2")
+install_if_needed("dplyr")
+install_if_needed("qgraph")
+install_if_needed("shinyWidgets")
+install_if_needed("RColorBrewer")
+install_if_needed("tidyr")
+install_if_needed("REdaS")
+install_if_needed('shinycssloaders')
+
+# From Github:
+if (!require("ggh4x")){
+  install_if_needed("devtools")
+  devtools::install_github("teunbrand/ggh4x")
+  library("ggh4x")
+}
 
 # Spinners:
  options(
