@@ -25,7 +25,6 @@ shinyServer(function(input, output) {
   
 
     output$truenetwork <- renderPlot({
-    
       
       truegraph <- Graphs[[input$dataSource]]
 
