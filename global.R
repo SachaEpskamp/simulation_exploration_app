@@ -7,17 +7,16 @@ install_if_needed <- function(pkg){
 }
 
 
-
+install_if_needed('shinycssloaders')
+install_if_needed("shinyWidgets")
 install_if_needed("shinythemes")
 install_if_needed("shiny")
 install_if_needed("ggplot2")
 install_if_needed("dplyr")
 install_if_needed("qgraph")
-install_if_needed("shinyWidgets")
 install_if_needed("RColorBrewer")
 install_if_needed("tidyr")
 install_if_needed("REdaS")
-install_if_needed('shinycssloaders')
 
 # From Github:
 if (!require("ggh4x")){
