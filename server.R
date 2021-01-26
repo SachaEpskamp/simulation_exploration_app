@@ -400,7 +400,8 @@ shinyServer(function(input, output) {
       useData2 <- useData()
       
       # Only relevant data type and sample size:
-      gathered_sub <- useData2[useData2$data %in% input$data_summaryTable & useData2$sampleSize %in% input$sampleSize_summaryTable &
+      gathered_sub <- useData2[ useData2$truegraph %in% input$dataSource_summaryTable & 
+        useData2$data %in% input$data_summaryTable & useData2$sampleSize %in% input$sampleSize_summaryTable &
                                  useData2$transformation %in% input$transformation_summaryTable,]
       
       gathered_sub <- gathered_sub %>% filter(metric %in% input$metrics_summaryTable)
@@ -630,7 +631,7 @@ shinyServer(function(input, output) {
         "Number of clusters: ",descriptives$graph_nCluster[descriptives$truegraph==source],tags$br(),
         "Sparsity: ",round(descriptives$graph_sparsity[descriptives$truegraph==source],2),tags$br(),
         "Average absolute edge-weight: ",round(descriptives$graph_avg_abs_weight[descriptives$truegraph==source],2),tags$br(),
-        "Average shortest path-length: ",round(descriptives$smallworld[descriptives$truegraph==source],2),tags$br(),
+        "Average shortest path-length: ",round(descriptives$APL[descriptives$truegraph==source],2),tags$br(),
         "Smallworldness: ",round(descriptives$smallworld[descriptives$truegraph==source],2),tags$br()
         
      )
