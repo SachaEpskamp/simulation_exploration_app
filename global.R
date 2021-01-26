@@ -1,7 +1,7 @@
 # Install packages if needed:
 install_if_needed <- function(pkg){
   if (!require(pkg, character.only = TRUE)) {
-    install.packages("shinythemes")
+    install.packages(pkg)
     library(pkg, character.only = TRUE)
   }
 }
