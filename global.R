@@ -1,7 +1,7 @@
 # Install packages if needed:
 install_if_needed <- function(pkg){
   if (!require(pkg, character.only = TRUE)) {
-    install.packages(pkg)
+    install.packages(pkg, dep = TRUE)
     library(pkg, character.only = TRUE)
   }
 }
