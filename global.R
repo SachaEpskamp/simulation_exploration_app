@@ -53,7 +53,7 @@ names(Graphs) <- c("MAGNA", "DASS21", "BFI")[match(names(Graphs),  c("MAGNA_PTSD
 
 
 # Read graph descriptives:
-descriptives <- read.csv("graph_descriptives.csv", stringsAsFactors = FALSE)
+descriptives <- read.csv("graph_descriptives.csv", stringsAsFactors = FALSE, sep = ";")
 descriptives$truegraph <- factor(descriptives$truegraph, 
                                  levels = c("MAGNA_PTSD", "DASS_ggmModSelect_stepwise", "psychTools_bfi_ggmModSelect_stepwise"),
                                  labels = c("MAGNA", "DASS21", "BFI")
